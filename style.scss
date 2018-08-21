@@ -1,3 +1,12 @@
 .controls {
   transform: scaleY(0.5);
 }
+
+#hello {
+  color: red;
+  font-size: 12;
+}
+
+body {
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+}
