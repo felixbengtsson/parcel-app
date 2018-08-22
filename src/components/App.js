@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Header from "./Header";
 
-export default class componentName extends Component {
+class App extends Component {
   render() {
     return (
       <div>
@@ -10,3 +10,5 @@ export default class componentName extends Component {
     );
   }
 }
+
+export default App;
