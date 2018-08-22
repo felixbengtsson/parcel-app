@@ -22543,6 +22543,50 @@ exports.default = _default;
 })();
 
 ;
+},{"react-hot-loader":"../node_modules/react-hot-loader/index.js","react":"../node_modules/react/index.js"}],"../src/components/Loading.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(function () {
+  var enterModule = require('react-hot-loader').enterModule;
+
+  enterModule && enterModule(module);
+})();
+
+var _default = function _default() {
+  return _react2.default.createElement(
+    "div",
+    { className: "loading" },
+    "Loading"
+  );
+};
+
+exports.default = _default;
+;
+
+(function () {
+  var reactHotLoader = require('react-hot-loader').default;
+
+  var leaveModule = require('react-hot-loader').leaveModule;
+
+  if (!reactHotLoader) {
+    return;
+  }
+
+  reactHotLoader.register(_default, "default", "/Users/felix/Front End/parcel-app/src/components/Loading.js");
+  leaveModule(module);
+})();
+
+;
 },{"react-hot-loader":"../node_modules/react-hot-loader/index.js","react":"../node_modules/react/index.js"}],"../src/components/App.js":[function(require,module,exports) {
 "use strict";
 
@@ -22559,6 +22603,10 @@ var _react2 = _interopRequireDefault(_react);
 var _Header = require("./Header");
 
 var _Header2 = _interopRequireDefault(_Header);
+
+var _Loading = require("./Loading");
+
+var _Loading2 = _interopRequireDefault(_Loading);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -22580,16 +22628,38 @@ var App = function (_Component) {
   function App() {
     _classCallCheck(this, App);
 
-    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
+
+    _this.state = {
+      loading: true
+    };
+    return _this;
   }
 
   _createClass(App, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      setTimeout(function () {
+        return _this2.setState({ loading: false });
+      }, 1500); // simulates an async action, and hides the spinner
+    }
+  }, {
     key: "render",
     value: function render() {
+      var loading = this.state.loading;
+
+
+      if (loading) {
+        // if your component doesn't have to wait for an async action, remove this block
+        return _react2.default.createElement(_Loading2.default, null); // render null when app is not ready
+      }
+
       return _react2.default.createElement(
         "div",
         null,
-        _react2.default.createElement(_Header2.default, null)
+        "I'm the app"
       );
     }
   }, {
@@ -22623,7 +22693,7 @@ exports.default = _default;
 })();
 
 ;
-},{"react-hot-loader":"../node_modules/react-hot-loader/index.js","react":"../node_modules/react/index.js","./Header":"../src/components/Header.js"}],"../src/index.js":[function(require,module,exports) {
+},{"react-hot-loader":"../node_modules/react-hot-loader/index.js","react":"../node_modules/react/index.js","./Header":"../src/components/Header.js","./Loading":"../src/components/Loading.js"}],"../src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -22728,7 +22798,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '63703' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '63800' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
