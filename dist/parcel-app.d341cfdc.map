@@ -1,1 +1,0 @@
-{"version":3,"sources":["index.js"],"names":["document","getElementById","innerHTML"],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAAA,SAASC,cAAT,CAAwB,KAAxB,EAA+BC,SAA/B","file":"parcel-app.d341cfdc.map","sourceRoot":"..","sourcesContent":["document.getElementById(\"app\").innerHTML = `\n  \n`;\n"]}
