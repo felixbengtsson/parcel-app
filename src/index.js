@@ -4,7 +4,7 @@ import App from "./components/App";
 
 class HelloMessage extends React.Component {
   render() {
-    return <div />
+    return <App />;
   }
 }
 
