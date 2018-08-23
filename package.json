@@ -23,6 +23,7 @@
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-error-overlay": "^4.0.1",
-    "react-hot-loader": "^4.3.4"
+    "react-hot-loader": "^4.3.4",
+    "react-router-dom": "^4.3.1"
   }
 }
