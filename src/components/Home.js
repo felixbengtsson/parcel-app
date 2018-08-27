@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import jump from "../images/nora_jump.jpg";
-import Loading from "./LoadingHOC";
+import Loading from "./Loading";
 
 class Home extends Component {
   constructor() {
@@ -17,7 +17,7 @@ class Home extends Component {
   render() {
     if (this.state.loading) {
       console.log("loading");
-      return null;
+      return <Loading />;
     } else {
       return (
         <div className="home">
