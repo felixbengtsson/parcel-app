@@ -1,7 +1,8 @@
 import React from "react";
 import jump from "../images/nora_jump.jpg";
+import Loading from "./LoadingHOC";
 
-export default () => {
+const Home = () => {
   return (
     <div className="home">
       <div className="home__welcome">
@@ -20,3 +21,5 @@ export default () => {
     </div>
   );
 };
+
+export default Loading(Home);

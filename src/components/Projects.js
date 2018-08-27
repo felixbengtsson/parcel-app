@@ -1,7 +1,8 @@
 import React from "react";
 import fall from "../images/nora_fall.jpg";
+import Loading from "./LoadingHOC";
 
-export default () => {
+const Projects = () => {
   return (
     <div className="home">
       <div className="home__welcome">
@@ -18,3 +19,5 @@ export default () => {
     </div>
   );
 };
+
+export default Loading(Projects);

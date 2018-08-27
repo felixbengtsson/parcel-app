@@ -107,3 +107,13 @@ a {
   left: 0;
   height: auto;
 }
+
+.loading {
+  opacity: 0.5;
+  position: absolute;
+  left: 0;
+  z-index: 99;
+  height: 100%;
+  width: 100%;
+  background: black;
+}

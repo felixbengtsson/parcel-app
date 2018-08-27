@@ -1,7 +1,8 @@
 import React from "react";
 import Move from "../images/nora_move.jpg";
+import Loading from "./LoadingHOC";
 
-export default () => {
+const About = () => {
   return (
     <div className="home">
       <div className="home__welcome">
@@ -18,3 +19,5 @@ export default () => {
     </div>
   );
 };
+
+export default Loading(About);
