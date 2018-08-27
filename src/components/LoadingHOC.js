@@ -16,7 +16,7 @@ export default function withSubscription(Comp) {
 
     render() {
       if (this.state.isLoading) {
-        console.log("loading...");
+        console.log("loading....");
         return <Loading />;
       } else {
         return <Comp />;
